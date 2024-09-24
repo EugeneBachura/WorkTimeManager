@@ -11,7 +11,11 @@ class WorkTime extends Model
 
     protected $fillable = ['employee_id', 'start_time', 'end_time', 'work_day'];
 
-    // Relationship to Employee model
+     /**
+     * Defines the relationship to the Employee model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function employee()
     {
         return $this->belongsTo(Employee::class);

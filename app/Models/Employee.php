@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Employee extends Model
 {
@@ -13,6 +14,11 @@ class Employee extends Model
     protected $keyType = 'uuid';
     protected $fillable = ['first_name', 'last_name'];
 
+     /**
+     * Boot function to generate UUID before creating a new record.
+     *
+     * @return void
+     */
     protected static function boot()
     {
         parent::boot();
