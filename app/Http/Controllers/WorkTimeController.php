@@ -35,6 +35,17 @@ class WorkTimeController extends Controller
             ], 422);
         }
 
+        // Check if the work duration exceeds 12 hours
+        $startTime = new \DateTime($validatedData['start_time']);
+        $endTime = new \DateTime($validatedData['end_time']);
+        $duration = $startTime->diff($endTime);
+
+        if ($duration->h > 12 || ($duration->h == 12 && $duration->i > 0)) {
+            return response()->json([
+                'error' => 'Work time cannot exceed 12 hours',
+            ], 422);
+        }
+
         // Create work time entry
         $workTime = WorkTime::create($validatedData);
 
