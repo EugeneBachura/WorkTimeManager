@@ -39,7 +39,9 @@ class WorkTimeController extends Controller
         $workTime = WorkTime::create($validatedData);
 
         return response()->json([
-            'message' => 'Work time has been registered successfully!',
+            'response' => [
+                'Czas pracy został dodany!'
+            ]
         ], 201);
     }
 }

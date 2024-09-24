@@ -26,7 +26,9 @@ class EmployeeController extends Controller
 
         // Return response with the created employee's ID
         return response()->json([
-            'id' => $employee->id,
+            'response' => [
+                'id' => $employee->id,
+            ]
         ], 201);
     }
 }

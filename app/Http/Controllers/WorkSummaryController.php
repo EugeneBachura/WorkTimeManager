@@ -100,20 +100,24 @@ class WorkSummaryController extends Controller
             $totalWages = $normalWages + $overtimeWages; // Total wages
 
             return response()->json([
-                'ilość normalnych godzin z danego miesiąca' => $normalHours,
-                'stawka' => $hourlyRate . ' PLN',
-                'ilość nadgodzin z danego miesiąca' => $overtimeHours,
-                'stawka nadgodzinowa' => $overtimeRate . ' PLN',
-                'suma po przeliczeniu' => $totalWages . ' PLN',
+                'response' => [
+                    'ilość normalnych godzin z danego miesiąca' => $normalHours,
+                    'stawka' => $hourlyRate . ' PLN',
+                    'ilość nadgodzin z danego miesiąca' => $overtimeHours,
+                    'stawka nadgodzinowa' => $overtimeRate . ' PLN',
+                    'suma po przeliczeniu' => $totalWages . ' PLN',
+                ]
             ], 200);
         } else {
             // Calculate wages for the day
             $totalWages = $totalHours * $hourlyRate;
 
             return response()->json([
-                'suma po przeliczeniu' => $totalWages . ' PLN',
-                'ilość godzin z danego dnia' => $totalHours,
-                'stawka' => $hourlyRate . ' PLN',
+                'response' => [
+                    'suma po przeliczeniu' => $totalWages . ' PLN',
+                    'ilość godzin z danego dnia' => $totalHours,
+                    'stawka' => $hourlyRate . ' PLN',
+                ]
             ], 200);
         }
     }
