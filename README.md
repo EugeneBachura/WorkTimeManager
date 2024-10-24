@@ -42,3 +42,25 @@ Jest to aplikacja napisana w najnowszej stabilnej wersji **Symfony/Laravel** ora
    - Data i godzina rozpoczęcia
    - Data i godzina zakończenia
    - Dzień rozpoczęcia (służy do obliczania godzin dla danego dnia)
+
+### Endpointy
+
+1. **Tworzenie pracownika**:
+   - Endpoint: `/api/pracownik/tworzenie`
+   - Input: `{"imię": "Karol", "nazwisko": "Szabat"}`
+   - Output: `{"id": "unikalny identyfikator"}`
+
+2. **Rejestracja czasu pracy**:
+   - Endpoint: `/api/czas_pracy/dodaj`
+   - Input: `{"unikalny identyfikator pracownika": "UUID", "data i godzina rozpoczęcia": "1970-01-01 08:00", "data i godzina zakończenia": "1970-01-01 14:00"}`
+   - Output: `{"response": "Czas pracy został dodany!"}`
+
+3. **Podsumowanie czasu pracy - dzień**:
+   - Endpoint: `/api/czas_pracy/podsumowanie_dzien`
+   - Input: `{"unikalny identyfikator pracownika": "UUID", "data": "1970-01-01"}`
+   - Output: `{"suma po przeliczeniu": "120 PLN", "ilość godzin": 6, "stawka": "20 PLN"}`
+
+4. **Podsumowanie czasu pracy - miesiąc**:
+   - Endpoint: `/api/czas_pracy/podsumowanie_miesiac`
+   - Input: `{"unikalny identyfikator pracownika": "UUID", "data": "1970-01"}`
+   - Output: `{"ilość normalnych godzin": 40, "ilość nadgodzin": 8, "suma po przeliczeniu": "1120 PLN"}`
