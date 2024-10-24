@@ -64,3 +64,30 @@ Jest to aplikacja napisana w najnowszej stabilnej wersji **Symfony/Laravel** ora
    - Endpoint: `/api/czas_pracy/podsumowanie_miesiac`
    - Input: `{"unikalny identyfikator pracownika": "UUID", "data": "1970-01"}`
    - Output: `{"ilość normalnych godzin": 40, "ilość nadgodzin": 8, "suma po przeliczeniu": "1120 PLN"}`
+
+
+## Konfiguracja
+
+1. **Norma godzin miesięcznych**: 40
+2. **Stawka godzinowa**: 20 PLN
+3. **Stawka nadgodzinowa**: 200% stawki
+
+## Instalacja
+
+1. Sklonuj repozytorium:
+   ```bash
+   git clone https://github.com//EugeneBachura/WorkTimeManager
+```
+2. Zainstaluj zależności:
+   ```bash
+   composer install
+```
+3. Skonfiguruj plik .env z danymi do bazy danych.
+4. Uruchom migracje:
+```bash
+   php artisan migrate
+```
+5. Uruchom serwer aplikacji:
+```bash
+   php artisan serve
+```
