@@ -75,11 +75,11 @@ Jest to aplikacja napisana w najnowszej stabilnej wersji **Symfony/Laravel** ora
 ## Instalacja
 
 1. Sklonuj repozytorium:
-   ```bash
+```bash
    git clone https://github.com//EugeneBachura/WorkTimeManager
 ```
 2. Zainstaluj zależności:
-   ```bash
+```bash
    composer install
 ```
 3. Skonfiguruj plik .env z danymi do bazy danych.
