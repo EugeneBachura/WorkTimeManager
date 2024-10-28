@@ -2,8 +2,9 @@
 
 ## Opis projektu
 
-To repozytorium zawiera rozwiązanie zadania rekrutacyjnego na stanowisko PHP Developera w firmie Innovation Software.
-Jest to aplikacja napisana w najnowszej stabilnej wersji **Symfony/Laravel** oraz **PHP**, z wykorzystaniem **MariaDB/MySQL**. Aplikacja umożliwia zarządzanie czasem pracy pracowników, w tym rejestrację rozpoczęcia i zakończenia pracy, a także obliczanie przepracowanych godzin i wynagrodzeń, w tym nadgodzin.
+To repozytorium zawiera rozwiązanie zadania rekrutacyjnego na stanowisko PHP Developera w firmie Innovation Software. Maksymalny czas na wykonanie zadania to 3 godziny. Można zrobić więcej według własnego uznania, ale funkcjonalność powinna być zgodna z opisem w zadaniu.
+
+Powinna to być aplikacja napisana w najnowszej stabilnej wersji **Symfony/Laravel** oraz **PHP**, z wykorzystaniem **MariaDB/MySQL**. Aplikacja umożliwia zarządzanie czasem pracy pracowników, w tym rejestrację rozpoczęcia i zakończenia pracy, a także obliczanie przepracowanych godzin i wynagrodzeń, w tym nadgodzin.
 
 ## Założenia projektu
 
