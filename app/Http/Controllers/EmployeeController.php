@@ -15,16 +15,13 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the incoming request
         $validatedData = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
         ]);
 
-        // Create the employee
         $employee = Employee::create($validatedData);
 
-        // Return response with the created employee's ID
         return response()->json([
             'response' => [
                 'id' => $employee->id,
@@ -32,4 +29,3 @@ class EmployeeController extends Controller
         ], 201);
     }
 }
-

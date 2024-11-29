@@ -12,7 +12,7 @@ class WorkTimeTest extends TestCase
 {
     use RefreshDatabase;
 
-     /**
+    /**
      * Test for creating a work time entry for an employee.
      * 
      * @test
@@ -20,7 +20,6 @@ class WorkTimeTest extends TestCase
      */
     public function it_can_create_work_time_for_an_employee()
     {
-        // Arrange
         $employee = Employee::factory()->create();
         $data = [
             'employee_id' => $employee->id,
@@ -29,10 +28,8 @@ class WorkTimeTest extends TestCase
             'work_day' => today(),
         ];
 
-        // Act
         $workTime = WorkTime::create($data);
 
-        // Assert
         $this->assertDatabaseHas('work_times', [
             'employee_id' => $employee->id,
             'work_day' => today()->toDateString(),
