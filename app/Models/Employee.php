@@ -14,7 +14,7 @@ class Employee extends Model
     protected $keyType = 'uuid';
     protected $fillable = ['first_name', 'last_name'];
 
-     /**
+    /**
      * Boot function to generate UUID before creating a new record.
      *
      * @return void
@@ -22,8 +22,6 @@ class Employee extends Model
     protected static function boot()
     {
         parent::boot();
-
-        // Automatic UUID generation when creating a new employee
         static::creating(function ($model) {
             $model->id = (string) Str::uuid();
         });
